@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Product Entries</h1>
+  <a href="{% url 'product_enter_create' %}" class="btn btn-primary">Add New Entry</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Old Quantity</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+      <tr>
+        <td>{{ entry.product.name }}</td>
+        <td>{{ entry.quantity }}</td>
+        <td>{{ entry.old_quantity }}</td>
+        <td>{{ entry.date }}</td>
+        <td>{{ entry.description }}</td>
+        <td>
+          <a href="{% url 'product_enter_update' entry.pk %}" class="btn btn-warning btn-sm">Edit</a>
+          <form action="{% url 'product_enter_delete' entry.pk %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+

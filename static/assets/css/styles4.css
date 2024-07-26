@@ -1,0 +1,49 @@
+/* Reset to remove default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling for background and font */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* Styling for the main content */
+.main-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px;
+    max-width: 600px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Heading style */
+h1 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* Paragraph style */
+p {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+/* Hover effect */
+.main-content:hover {
+    transform: translateY(-5px);
+}
